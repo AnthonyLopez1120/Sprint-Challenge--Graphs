@@ -2,7 +2,7 @@
 
 You are provided with a pre-generated graph consisting of 500 rooms. You are responsible for filling `traversal_path` with directions that, when walked in order, will visit every room on the map at least once.
 
-Open `adv.py`. There are four parts to the provided code:
+Open `adv.py` . There are four parts to the provided code:
 
 * World generation code. Do not modify this!
 * An incomplete list of directions. Your task is to fill this with valid traversal directions.
