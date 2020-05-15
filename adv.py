@@ -43,18 +43,24 @@ while len(visited) < len(room_graph) - 1:
     
 
     if player.current_room.id not in visited:
+        
         visited[player.current_room.id] = player.current_room.get_exits()
         prev = reverse_path[-1]
         visited[player.current_room.id].remove(prev)
         random.shuffle(visited[player.current_room.id])
+
     while len(visited[player.current_room.id]) == 0:
+
         prev = reverse_path.pop()
         traversal_path.append(prev)
         player.travel(prev)
+
     move_direction = visited[player.current_room.id].pop(0)
     traversal_path.append(move_direction)
     reverse_path.append(opposite[move_direction])
     player.travel(move_direction)
+
+print(traversal_path)
 
 # TRAVERSAL TEST - DO NOT MODIFY
 visited_rooms = set()
@@ -75,7 +81,7 @@ else:
 
 #######
 # UNCOMMENT TO WALK AROUND
-#######
+######
 # player.current_room.print_room_description(player)
 # while True:
 #     cmds = input("-> ").lower().split(" ")
